@@ -1,0 +1,27 @@
+#!/usr/bin/env php
+<?php
+
+if (!is_file(dirname(__DIR__).'/vendor/autoload_runtime.php')) {
+    throw new LogicException('Symfony Runtime is missing. Try running "composer require symfony/runtime".');
+}
+
+require_once dirname(__DIR__).'/vendor/autoload_runtime.php';
+
+use Symfony\Component\Console\Application;
+use RedFireDigital\Helper\Service\AWS\Command\ListBucketsCommand;
+use RedFireDigital\Helper\Service\AWS\Command\GenerateAWSPoliciesCommand;
+use RedFireDigital\Helper\Service\AWS\Service\s3Service;
+use RedFireDigital\Helper\Service\AWS\Service\AWSConfig;
+
+
+$app = new Application();
+
+// Retrive env variable
+$awsConfig = new AWSConfig(
+    'eu-west2','latest','someKey','someSecrete','redfire','dev'
+);
+
+
+$app->add(new ListBucketsCommand(new s3Service($awsConfig)));
+$app->add(new GenerateAWSPoliciesCommand(new s3Service($awsConfig)));
+$app->run();

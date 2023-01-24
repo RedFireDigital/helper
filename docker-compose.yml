@@ -1,0 +1,21 @@
+###############################################################################
+#                          Generated on phpdocker.io                          #
+###############################################################################
+version: '3.1'
+services:
+    php-fpm:
+        build: tools/docker/php-fpm
+        container_name: redfiredigial_phpfpm
+        working_dir: /application
+        volumes:
+            - '.:/application'
+            - './var/cache:/application/var/cache:cached'
+            - './var/log:/application/var/log:cached'
+            - './vendor:/application/vendor:cached'
+
+configs:
+  php_config:
+    file: tools/docker/php-fpm/php-ini-overrides.ini
+
+volumes:
+  redfire_data:
