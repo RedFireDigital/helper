@@ -4,10 +4,10 @@
     "type": "library",
     "require": {
         "aws/aws-sdk-php": "^3.257",
-        "symfony/console": "6.3.x-dev",
-        "symfony/dependency-injection": "6.3.x-dev",
-        "symfony/dotenv": "6.3.x-dev",
-        "symfony/finder": "6.3.x-dev",
+        "symfony/console": ">=5.*-dev",
+        "symfony/dependency-injection": ">=5.*-dev",
+        "symfony/dotenv": ">=5.*-dev",
+        "symfony/finder": ">=5.*-dev",
         "symfony/runtime": "*"
     },
     "autoload": {
