@@ -10,6 +10,7 @@
         "symfony/dependency-injection": ">=5.*-dev",
         "symfony/dotenv": ">=5.*-dev",
         "symfony/finder": ">=5.*-dev",
+        "symfony/routing": "6.3.x-dev",
         "symfony/runtime": "*"
     },
     "autoload": {
