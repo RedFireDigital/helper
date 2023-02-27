@@ -4,6 +4,8 @@
     "type": "library",
     "require": {
         "aws/aws-sdk-php": "^3.257",
+        "endroid/qr-code-bundle": "^4.0@dev",
+        "sensio/framework-extra-bundle": "^6.2",
         "symfony/console": ">=5.*-dev",
         "symfony/dependency-injection": ">=5.*-dev",
         "symfony/dotenv": ">=5.*-dev",
@@ -37,7 +39,8 @@
         "allow-plugins": {
             "composer/package-versions-deprecated": true,
             "symfony/flex": true,
-            "symfony/runtime": true
+            "symfony/runtime": true,
+            "endroid/installer": true
         }
     },
 
