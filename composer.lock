@@ -5874,7 +5874,8 @@
         "symfony/console": 20,
         "symfony/dependency-injection": 20,
         "symfony/dotenv": 20,
-        "symfony/finder": 20
+        "symfony/finder": 20,
+        "phpunit/phpunit": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

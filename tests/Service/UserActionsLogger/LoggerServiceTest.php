@@ -32,7 +32,7 @@ class UserConcrete implements UserInterface
         return $this->actions;
     }
 
-    public function setUserActions(array $userActions)
+    public function setUserActions($userActions)
     {
         $this->actions = $userActions;
     }

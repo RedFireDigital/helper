@@ -7,28 +7,31 @@ abstract class UserAction
     public const VIEW_ACTION = 'view';
     public const EDIT_ACTION = 'edit';
     public const DELETE_ACTION = 'delete';
+    public const NEW_ACTION = 'new';
     public const LIST_ACTION = 'list';
+    public const LOGIN_ACTION = 'login';
+    public const LOGOUT_ACTION = 'logout';
 
-    private string|int|null $id;
+    protected string|int|null $id;
 
-    private ?string $action = null;
+    protected ?string $action = null;
 
-    private ?string $resource = null;
+    protected ?string $resource = null;
 
-    private ?string $resourceId = null;
+    protected ?string $resourceId = null;
 
-    private array|null $details = null;
+    protected array|null $details = null;
 
-    private ?\DateTimeInterface $createdDate = null;
+    protected ?\DateTimeInterface $createdDate = null;
 
-    private ?UserInterface $user = null;
+    protected ?UserInterface $user = null;
 
     public function __construct(
         UserInterface $user,
         string $action,
-        string $resource,
-        string $resourceId,
-        array $details
+        string|null $resource,
+        string|null $resourceId,
+        array|null $details
     ) {
         $this->user = $user;
         $this->createdDate = new \DateTime();
