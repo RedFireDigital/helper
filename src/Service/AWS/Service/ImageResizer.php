@@ -4,6 +4,7 @@ namespace RedFireDigital\Helper\Service\AWS\Service;
 
 use Imagine\Gd\Imagine;
 use Imagine\Image\Box;
+use RedFireDigital\Helper\Service\AWS\Model\ImageSize;
 
 class ImageResizer
 {
@@ -15,13 +16,16 @@ class ImageResizer
         $this->imagine = new Imagine();
     }
 
-    public function resize(string $filename, string $imageFileContents, int $width, int $height): string
+    public function resize(string $filename, string $imageFileContents, ImageSize $imageSize): string
     {
         $image = getimagesizefromstring($imageFileContents);
 
         $iwidth = imagesx($image);
         $iheight = imagesy($image);
         $ratio = $iwidth / $iheight;
+
+        $width = $imageSize->getWidth();
+        $height = $imageSize->getHeight();
 
         if ($width / $height > $ratio) {
             $width = $height * $ratio;
@@ -34,10 +38,8 @@ class ImageResizer
 
         $saveFileName =
             $pathInfo['dirname'] . '/' .
-            $pathInfo['dirname'] . '-' .
-            $width . 'x' .
-            $height .
-            $pathInfo['extension'];
+            $imageSize->getName() . '/' .
+            $pathInfo['filename'] . '.' . $pathInfo['extension'];
 
         $photo = $this->imagine->open($filename);
         $photo->resize(new Box($width, $height))->save($saveFileName);
