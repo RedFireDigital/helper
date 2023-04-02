@@ -36,12 +36,11 @@ class s3Service extends AWSBase
         return $this->s3Client->listBuckets();
     }
 
-    public function putObject(string $bucketFolder = null, string $nameOfFile, string $fileContents) : UploadedS3
+    public function putObject(string $folder, string $nameOfFile, string $fileContents) : UploadedS3
     {
-        $fileName = $nameOfFile;
-        $folder = is_null($bucketFolder) ? '' : '/' . $bucketFolder ;
-        $uploadedFileName = $this->getRandomFileName($fileName);
-        $uploadedPath = $this->awsConfig->getAppEnv() . $folder . "/";
+        //$uploadedFileName = $this->getRandomFileName($fileName);
+        $uploadedFileName = $nameOfFile;
+        $uploadedPath = $this->awsConfig->getAppEnv() . "/" . $folder . "/";
         $s3Path = 's3://' . $this->awsConfig->getAwsBucketName() . '/' . $uploadedPath . $uploadedFileName;
         file_put_contents($s3Path, $fileContents);
 
