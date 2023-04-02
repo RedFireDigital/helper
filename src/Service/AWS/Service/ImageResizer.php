@@ -18,10 +18,9 @@ class ImageResizer
 
     public function resize(string $filename, string $imageFileContents, ImageSize $imageSize): string
     {
-        $image = getimagesizefromstring($imageFileContents);
+        list($iwidth, $iheight) = getimagesizefromstring($imageFileContents);
 
-        $iwidth = imagesx($image);
-        $iheight = imagesy($image);
+
         $ratio = $iwidth / $iheight;
 
         $width = $imageSize->getWidth();
