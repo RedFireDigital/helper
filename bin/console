@@ -10,6 +10,7 @@ require_once dirname(__DIR__).'/vendor/autoload_runtime.php';
 use Symfony\Component\Console\Application;
 use RedFireDigital\Helper\Service\AWS\Command\ListBucketsCommand;
 use RedFireDigital\Helper\Service\AWS\Command\GenerateAWSPoliciesCommand;
+use RedFireDigital\Helper\Service\AWS\Command\UploadTestImageToBucketCommand;
 use RedFireDigital\Helper\Service\AWS\Service\s3Service;
 use RedFireDigital\Helper\Service\AWS\Service\AWSConfig;
 
@@ -24,4 +25,5 @@ $awsConfig = new AWSConfig(
 
 $app->add(new ListBucketsCommand(new s3Service($awsConfig)));
 $app->add(new GenerateAWSPoliciesCommand(new s3Service($awsConfig)));
+$app->add(new UploadTestImageToBucketCommand(new s3Service($awsConfig)));
 $app->run();
