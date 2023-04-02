@@ -36,7 +36,7 @@ class s3Service extends AWSBase
         return $this->s3Client->listBuckets();
     }
 
-    public function putObject(?string $bucketFolder = null, string $nameOfFile, string $fileContents) : UploadedS3
+    public function putObject(string $bucketFolder = null, string $nameOfFile, string $fileContents) : UploadedS3
     {
         $fileName = $nameOfFile;
         $folder = is_null($bucketFolder) ? '' : '/' . $bucketFolder ;

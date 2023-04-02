@@ -5,6 +5,7 @@
     "require": {
         "aws/aws-sdk-php": "^3.257",
         "endroid/qr-code-bundle": "^4.0@dev",
+        "imagine/imagine": "^1.2",
         "sensio/framework-extra-bundle": "^6.2",
         "symfony/console": ">=5.*-dev",
         "symfony/dependency-injection": ">=5.*-dev",

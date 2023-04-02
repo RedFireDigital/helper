@@ -15,6 +15,7 @@
 
 namespace RedFireDigital\Helper\Service\AWS\Command;
 
+use RedFireDigital\Helper\Service\AWS\Service\ImageResizer;
 use RedFireDigital\Helper\Service\AWS\Service\s3Service;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
@@ -38,6 +39,9 @@ class UploadTestImageToBucketCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
+        $maxWidth = 250;
+        $maxHeight = 300;
+
         $fileContents = file_get_contents(self::TEST_IMAGE_URL);
         $output->writeln([
             '',
@@ -47,6 +51,7 @@ class UploadTestImageToBucketCommand extends Command
             '=====================',
             'Sending image ' . self::TEST_IMAGE_URL . '...',
             'File size ' . strlen($fileContents) . ' bytes',
+
         ]);
 
 
@@ -55,6 +60,26 @@ class UploadTestImageToBucketCommand extends Command
             'carl.jpg',
             $fileContents
         );
+
+        $imageResize = new ImageResizer();
+        $resizedName = $imageResize->resize('carl.jpg', $fileContents, $maxWidth, $maxHeight);
+
+        $uploadedS3resized = $this->s3Service->putObject(
+            'test',
+            $resizedName,
+            file_get_contents($resizedName)
+        );
+
+        $output->writeln([
+            '=====================',
+            'Resizing image to ' . $maxWidth . ' x ' . $maxHeight . ' also',
+            'Uploaded to ' . $uploadedS3resized->getFileName(),
+            's3 URL ' . $uploadedS3resized->getAwsS3Path(),
+            's3 Key ' . $uploadedS3resized->getAwsBucketKey(),
+            'Public URL ' . $uploadedS3resized->getPublicUrl(),
+            '',
+        ]);
+
 
 
         $output->writeln([
