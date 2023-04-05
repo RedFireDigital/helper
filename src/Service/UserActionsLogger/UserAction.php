@@ -10,8 +10,9 @@ abstract class UserAction
     public const NEW_ACTION = 'new';
     public const LIST_ACTION = 'list';
     public const LOGIN_ACTION = 'login';
-    public const LOGOUT_ACTION = 'logout';
+    public const LOGIN_FAILED_ACTION = 'login_failed';
 
+    public const LOGOUT_ACTION = 'logout';
     protected string|int|null $id;
 
     protected ?string $action = null;
