@@ -28,7 +28,7 @@ abstract class UserAction
     protected ?UserInterface $user = null;
 
     public function __construct(
-        UserInterface $user,
+        UserInterface|null $user,
         string $action,
         string|null $resource,
         string|null $resourceId,
