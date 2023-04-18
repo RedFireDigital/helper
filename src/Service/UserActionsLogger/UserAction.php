@@ -7,6 +7,7 @@ abstract class UserAction
     public const VIEW_ACTION = 'view';
     public const EDIT_ACTION = 'edit';
     public const DELETE_ACTION = 'delete';
+    public const CLONED_ACTION = 'cloned';
     public const NEW_ACTION = 'new';
     public const LIST_ACTION = 'list';
     public const LOGIN_ACTION = 'login';
