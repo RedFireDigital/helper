@@ -11,8 +11,7 @@
         "symfony/dependency-injection": ">=5.*-dev",
         "symfony/dotenv": ">=5.*-dev",
         "symfony/finder": ">=5.*-dev",
-        "symfony/runtime": "^6.2",
-        "hippy2094/random-name-generator": "*"
+        "symfony/runtime": "^6.2"
     },
     "autoload": {
         "psr-4": {
@@ -51,17 +50,6 @@
         "phpunit/phpunit": "^10.1@dev"
     },
     "repositories":[
-        {
-            "type": "package",
-            "package": {
-                "name": "hippy2094/random-name-generator",
-                "version": "1.0.0",
-                "source": {
-                    "url": "git@github.com:hippy2094/random-name-generator.git",
-                    "type": "git",
-                    "reference": "master"
-                }
-            }
-        }
+
     ]
 }

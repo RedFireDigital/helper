@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "101baeeaa1ab048b30b015d25255c9d7",
+    "content-hash": "62a42d0de580e13df633203a8bf3d492",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -945,16 +945,6 @@
                 }
             ],
             "time": "2024-03-31T10:09:24+00:00"
-        },
-        {
-            "name": "hippy2094/random-name-generator",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:hippy2094/random-name-generator.git",
-                "reference": "master"
-            },
-            "type": "library"
         },
         {
             "name": "imagine/imagine",
