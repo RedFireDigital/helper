@@ -12,7 +12,6 @@
         "symfony/dotenv": ">=5.*-dev",
         "symfony/finder": ">=5.*-dev",
         "symfony/runtime": "^6.2",
-        "aruljohn/popular-baby-names": "*",
         "hippy2094/random-name-generator": "*"
     },
     "autoload": {
@@ -52,18 +51,6 @@
         "phpunit/phpunit": "^10.1@dev"
     },
     "repositories":[
-        {
-            "type": "package",
-            "package": {
-                "name": "aruljohn/popular-baby-names",
-                "version": "1.0.0",
-                "source": {
-                    "url": "https://github.com/aruljohn/popular-baby-names.git",
-                    "type": "git",
-                    "reference": "master"
-                }
-            }
-        },
         {
             "type": "package",
             "package": {

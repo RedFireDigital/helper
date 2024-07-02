@@ -4,18 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bf77d1bb0abb1b0ca88d298b9022aee5",
+    "content-hash": "101baeeaa1ab048b30b015d25255c9d7",
     "packages": [
-        {
-            "name": "aruljohn/popular-baby-names",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/aruljohn/popular-baby-names.git",
-                "reference": "master"
-            },
-            "type": "library"
-        },
         {
             "name": "aws/aws-crt-php",
             "version": "v1.2.6",
