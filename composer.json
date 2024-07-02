@@ -6,12 +6,11 @@
         "aws/aws-sdk-php": "^3.257",
         "endroid/qr-code-bundle": "^4.0@dev",
         "imagine/imagine": "^1.2",
-        "sensio/framework-extra-bundle": "^6.2",
-        "symfony/console": ">=5.*-dev",
-        "symfony/dependency-injection": ">=5.*-dev",
-        "symfony/dotenv": ">=5.*-dev",
-        "symfony/finder": ">=5.*-dev",
-        "symfony/runtime": "^6.2"
+        "symfony/console": "7.0.*",
+        "symfony/dependency-injection": "7.0.*",
+        "symfony/dotenv": "7.0.*",
+        "symfony/finder": "7.0.*",
+        "symfony/runtime": "7.0.*"
     },
     "autoload": {
         "psr-4": {

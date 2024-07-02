@@ -1,4 +1,4 @@
-FROM php:8.1-fpm-bullseye
+FROM php:8.3-fpm-bullseye
 WORKDIR "/application"
 
 COPY php-ini-overrides.ini /etc/php/8.1/fpm/conf.d/99-overrides.ini
