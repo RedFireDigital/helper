@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f945e872a9f9813ff9aa26cde7cce001",
+    "content-hash": "6a7b1c7c46060a500c4826d893adb557",
     "packages": [
         {
             "name": "aruljohn/popular-baby-names",
